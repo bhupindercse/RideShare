@@ -2,7 +2,67 @@
 
 require_once 'dbconfig.php';
 
+if($user->is_loggedin()!="")
+{
+	$user->redirect('home.php');
+}
 
+if(isset($_POST['btn-signup']))
+{
+	
+	$fname = trim($_POST['txt_fname']);
+	$lname = trim($_POST['txt_lname']);
+	//Previous code
+	$uname = trim($_POST['txt_uname']);
+	$umail = trim($_POST['txt_umail']);
+	$upass = trim($_POST['txt_upass']);	
+	//New
+	$address = trim($_POST['txt_address']);
+	
+	if($uname=="")	{
+		$error[] = "provide username !";	
+	}
+	else if($umail=="")	{
+		$error[] = "provide email id !";	
+	}
+	else if(!filter_var($umail, FILTER_VALIDATE_EMAIL))	{
+	    $error[] = 'Please enter a valid email address !';
+	}
+	else if($upass=="")	{
+		$error[] = "provide password !";
+	}
+	else if(strlen($upass) < 6){
+		$error[] = "Password must be atleast 6 characters";	
+	}
+	else
+	{
+		try
+		{
+			
+			$stmt = $DB_con->prepare("SELECT username,emailid FROM users WHERE username=:uname OR emailid=:umail");
+			$stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
+			$row=$stmt->fetch(PDO::FETCH_ASSOC);
+				
+			if($row['username']==$uname) {
+				$error[] = "sorry username already taken !";
+			}
+			else if($row['emailid']==$umail) {
+				$error[] = "sorry email id already taken !";
+			}
+			else
+			{
+				if($user->register($uname,$fname,$lname,$upass,$umail,$address,$joined))	{
+					
+					$user->redirect('sign-up.php?joined');
+				}
+			}
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+	}	
+}
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
