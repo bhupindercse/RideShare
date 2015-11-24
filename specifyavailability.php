@@ -1,6 +1,5 @@
 
 <?php
-	
 	require_once 'core/init.php';
 	$user = new User();
 	
@@ -14,8 +13,6 @@
 $username='root';
 $password='';
     $db = new PDO("mysql:host=$hostname;dbname=rs",$username,$password);
-		
-		
 $sql = "SELECT DISTINCT * FROM location";
 $query = $db->prepare($sql);
 $query->execute();
@@ -26,11 +23,12 @@ foreach ($result as $row) {
     $option.='<option value="'.$id.'">'.$id.'</option>';
 }
 ?>
-
     <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <html idmmzcc-ext-docid="498481152">
 
-    <head></head>
+    <head>
+    	
+    </head>
     <body marginwidth="0" marginheight="0" topmargin="0" leftmargin="0">
         
 		<table width="100%" height="100%" cellspacing="0" cellpadding="3" border="0">
@@ -82,7 +80,6 @@ foreach ($result as $row) {
 		<option value="x">2015</option>
 		</select><br>
 		
-		
 		<label>Select Time:</label><br>
 		&nbsp
 		<select>
@@ -96,7 +93,6 @@ foreach ($result as $row) {
 		<option value="feb">2</option>
 		</select><br>
 		<input type="submit" value="Submit">
-		
 		</form>
 		                                                                </td>
                                                             </tr>
@@ -117,8 +113,6 @@ foreach ($result as $row) {
                     </tr>
                 </tbody>
             </table>
-		
-		
     </html>
 	<?php
 	}
