@@ -32,7 +32,6 @@ if(isset($_POST['btn_availability'])) {
 	// database query
 	try
 		{
-			
 			$stmt = $DB_con->prepare("SELECT * FROM ride_history WHERE user_id=:user_id");
 			$stmt->execute(array(':user_id'=>$user_id));
 			$row=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -114,7 +113,6 @@ welcome : <?php print($userRow['username']); ?>
 		<option disabled>Select City</option>
 		<?php echo $option;?>
 		</select><br>
-	
 	<label for="date5">Select Date:</a>
 	<?php
 	  require('calendar/tc_calendar.php');
