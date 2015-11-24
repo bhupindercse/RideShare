@@ -22,7 +22,6 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-
 <div class="header">
 	<div class="left">
     	<label><a href="#">UWindsor Ride-Share</a></label>
@@ -49,18 +48,17 @@ welcome : <?php print($userRow['username']); ?>
 <h1>Enter the website as:</h1>
 <a  href="ridegiver.php"><button type="button" class="btn btn-success">Ride Giver</button></a>
 <a  href="ridetaker.php"><button type="button" class="btn btn-success">Ride Taker</button></a>
-<?php
+		<?php
 			if(isset($_GET['submit_availability']))
 			{
 				$alert = "Availability successfully submitted   !";
 			 	?>
-                     <div class="alert alert-danger">
-                        <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $alert; ?>
-                     </div>
+                		 <div class="alert alert-danger">
+                			  <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $alert; ?>
+                     		</div>
                 <?php
 			}
 ?>
-
 </div>
 </body>
 </html>
