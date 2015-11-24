@@ -7,8 +7,6 @@
 	if(!$user->isLoggedIn()) {
     Redirect::to('index.php');
 	} else {
-		
-		//
 		$hostname='localhost';
 $username='root';
 $password='';
