@@ -22,7 +22,6 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-
 <div class="header">
 	<div class="left">
     	<label><a href="#">UWindsor Ride-Share</a></label>
