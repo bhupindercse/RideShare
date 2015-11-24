@@ -11,9 +11,9 @@ body {
 	}
 	
 	#header {
-		font-size:20px;
+		font-size:21px;
 		border:1px solid #bbb;
-		height:45px;
+		height:46px;
 		padding:10px;
 	}
 	#content {
@@ -30,7 +30,7 @@ body {
 	}
 	#content-main {
 		margin-left:10px;
-		width:110px;
+		width:111px;
 	}
 	#content-right {
 		margin-left:10px;
