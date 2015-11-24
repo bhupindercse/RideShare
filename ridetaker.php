@@ -44,18 +44,17 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 </div>
 <div class="content">
 welcome : <?php print($userRow['username']); ?>
-<?php
+		<?php
 			if(isset($_GET['submit_availability']))
 			{
 				$alert = "Availability successfully submitted   !";
-			 	?>
-                     <div class="alert alert-danger">
-                        <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $alert; ?>
-                     </div>
+		?>
+                     	<div class="alert alert-danger">
+                		 <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $alert; ?>
+                	 </div>
                 <?php
 			}
 ?>
-
 </div>
 </body>
 </html>
