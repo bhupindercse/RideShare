@@ -16,7 +16,7 @@ h2
 }
 .form-container
 {
-	width:500px;
+	width:501px;
 	margin:0 auto;
 	background:#fff;
 	padding: 25px;
@@ -49,11 +49,12 @@ a
 	height:60px;
 	width:100%;
 }
+
 .header a
 {
 	color:#f9f9f9;
 	font-family:Verdana, Geneva, sans-serif;
-	font-size:25px;
+	font-size:26px;
 	text-decoration:none;
 	position:relative;
 	top:15px;
@@ -70,6 +71,7 @@ a
 	position:relative;
 	right:150px;
 }
+
 .content
 {
 	margin:0 auto;
@@ -78,6 +80,7 @@ a
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	color:#00a2d1;
 }
+
 .content p
 {
 	font-size:30px;
@@ -86,9 +89,8 @@ a
 	margin:0 auto;
 }
 
-
 .button-link {
-    padding: 10px 15px;
+    padding: 11px 16px;
     background: #4479BA;
     color: #FFFF;
     -webkit-border-radius: 4px;
